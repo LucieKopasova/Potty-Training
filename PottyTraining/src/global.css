@@ -14,12 +14,14 @@ body {
   background-color: var(--color-background);
   color: var(--color-secondary);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-width: 320px;
+  max-width: 480px;
 }
 
 /* ---------Header-------------------- */
 
 .header__title {
-  font-size: 3.7rem;
+  font-size: 2.8rem;
   margin: 0;
 
 }
@@ -62,15 +64,10 @@ body {
   text-align: right;
   border: none;
   font-size: 1.2rem;
-  max-width: 50%;
+  max-width: 40%;
 
 }
 
-.container {
-  max-width: 26rem;
-  margin-right: auto;
-  margin-left: auto;
-}
 
 .header {
   display: flex;
@@ -86,10 +83,16 @@ body {
 
 /* ---------Report-------------------- */
 
+
 .daily-report,
 .settings__day {
   padding: 20px;
   border-bottom: 3px solid black;
+}
+
+
+.daily-report__list {
+  padding: 0;
 }
 
 .btn__daily-report {
@@ -103,22 +106,22 @@ body {
   height: 20px;
   background-color: var(--color-primary-dark);
   border-radius: 50%;
-  margin-right: 25px;
+  margin-right: 5%;
   position: relative;
 }
 
 .list__bullet::after {
   content: '';
-  width: 2.5px;
+  width: 2px;
   height: 25px;
   background-color: var(--color-secondary);
   position: absolute;
   top: 30px;
-  right: 10px;
+  right: 8px;
 }
 
 .img__success {
-  fill: #40C057;
+  fill: #48966b;
 }
 
 .img__failure {
@@ -127,7 +130,7 @@ body {
 
 .img__success:hover,
 .img__success:focus {
-  fill: #28a745;
+  fill: #366e4f;
 }
 
 .img__failure:hover,
@@ -147,6 +150,10 @@ body {
 
 /* ---------Graphs
 -------------------- */
+.daily-graphs {
+  padding: 20px;
+}
+
 .daily-graphs__title {
   font-weight: normal;
   font-size: 1.5rem
