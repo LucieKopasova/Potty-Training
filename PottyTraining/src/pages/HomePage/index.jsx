@@ -1,6 +1,30 @@
 import './style.css';
+import React from 'react';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
+
+ChartJS.register(ArcElement);
 
 export const HomePage = () => {
+  const data = {
+    labels: ['Úspěch', 'Neúspěch'],
+    datasets: [
+      {
+        data: [66, 34],
+        backgroundColor: ['#79ecfc', '#00bcd4'],
+      },
+    ],
+  };
+
+  // Volby grafu, bez legendy a tooltipů (jak jsi chtěla)
+  const options = {
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: false },
+    },
+    cutout: '30%',
+  };
+
   return (
     <div className="container">
       <header className="header">
@@ -143,7 +167,9 @@ export const HomePage = () => {
 
       <section className="daily-graphs">
         <h3 className="daily-graphs__title">Úspěšnost:</h3>
-        <div>66%</div>
+        <div className="graphs">
+          <Doughnut data={data} options={options} />
+        </div>
       </section>
 
       <footer>
