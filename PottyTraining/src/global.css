@@ -16,6 +16,8 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* ---------Header-------------------- */
+
 .header__title {
   font-size: 3.7rem;
   margin: 0;
@@ -82,13 +84,80 @@ body {
   color: #023c4b;
 }
 
-.settings__form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px
-}
+/* ---------Report-------------------- */
 
+.daily-report,
 .settings__day {
   padding: 20px;
   border-bottom: 3px solid black;
+}
+
+.btn__daily-report {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list__bullet {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-primary-dark);
+  border-radius: 50%;
+  margin-right: 25px;
+  position: relative;
+}
+
+.list__bullet::after {
+  content: '';
+  width: 2.5px;
+  height: 25px;
+  background-color: var(--color-secondary);
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+
+.img__success {
+  fill: #40C057;
+}
+
+.img__failure {
+  fill: #FA5252;
+}
+
+.img__success:hover,
+.img__success:focus {
+  fill: #28a745;
+}
+
+.img__failure:hover,
+.img__failure:focus {
+  fill: #e03131;
+}
+
+.daily-report__item {
+  display: flex;
+  align-items: center
+}
+
+.time {
+  font-size: 1.8rem;
+  width: 40%;
+}
+
+/* ---------Graphs
+-------------------- */
+.daily-graphs__title {
+  font-weight: normal;
+  font-size: 1.5rem
+}
+
+/* ---------Footer
+-------------------- */
+
+footer {
+  color: white;
+  background-color: var(--color-secondary);
+  text-align: center;
+  padding: 20px;
 }
