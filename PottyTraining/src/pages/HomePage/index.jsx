@@ -6,65 +6,54 @@ export const HomePage = () => {
       <header className="header">
         <h1 className="header__title">Potty Traing</h1>
       </header>
-      <section className="settings__day">
-        <form className="settings__form">
-          <div className="settings__row">
-            <h4>Nastavení</h4>
-            <label>
-              Od:
-              <input
-                type="time"
-                name="start-time"
-                className="settings__input"
-              />
-            </label>
-            <label>
-              Do:
-              <input type="time" name="end-time" className="settings__input" />
-            </label>
-          </div>
 
-          <div className="settings__row">
-            <h4>Polední spinkaní</h4>
-            <label>
-              Od:
-              <input
-                type="time"
-                name="start-time"
-                className="settings__input"
-              />
-            </label>
-            <label>
-              Do:
-              <input type="time" name="end-time" className="settings__input" />
-            </label>
-          </div>
+      <section className="settings__day">
+        <div className="btns__setting">
+          <button class="btn__settings btn__settings--star">Start</button>
+
+          <button class="btn__settings btn__settings --end">Konec</button>
+        </div>
+        <div className="settings__interval">
           <label>
             Každých:
             <input
               type="number"
               name="interval"
-              className="settings__input"
+              className="interval__input"
               min="1"
-            />{' '}
+              placeholder="30"
+            />
             minut
           </label>
-
-          <button type="submit" class="settings__button">
-            Vytvořit den
-          </button>
-        </form>
+        </div>
       </section>
 
       <section className="daily-report">
-        <h3 className="daily-report__title">Den 22. června 2025</h3>
         <ul className="daily-report__list">
           <li className="daily-report__item">
             <span className="time">07:30</span>
-            <button clclassNameass="btn success" aria-label="Úspěch">
+            <button clclassNameass="btn-success" aria-label="Úspěch">
               ✅
             </button>
-            <button className="btn failure" aria-label="Neúspěch">
+            <button className="btn-failure" aria-label="Neúspěch">
+              ❌
+            </button>
+          </li>
+          <li className="daily-report__item">
+            <span className="time">07:30</span>
+            <button clclassNameass="btn-success" aria-label="Úspěch">
+              ✅
+            </button>
+            <button className="btn-failure" aria-label="Neúspěch">
+              ❌
+            </button>
+          </li>
+          <li className="daily-report__item">
+            <span className="time">07:30</span>
+            <button clclassNameass="btn-success" aria-label="Úspěch">
+              ✅
+            </button>
+            <button className="btn-failure" aria-label="Neúspěch">
               ❌
             </button>
           </li>
@@ -72,7 +61,7 @@ export const HomePage = () => {
       </section>
 
       <section className="daily-graphs">
-        <h3>Dnešní úspěšnost:</h3>
+        <h3>Úspěšnost:</h3>
         <div>66%</div>
       </section>
 
