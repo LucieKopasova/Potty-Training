@@ -1,14 +1,22 @@
 import { useState } from 'react';
 
-export const Settingsday = ({ onClick }) => {
+export const Settingsday = ({ handlestart, onChange, handleEnd }) => {
   return (
     <>
       <div className="btns__setting">
-        <button className="btn__settings btn__settings--star" onClick={onClick}>
+        <button
+          className="btn__settings btn__settings--star"
+          onClick={handlestart}
+        >
           Start
         </button>
 
-        <button className="btn__settings btn__settings --end">Konec</button>
+        <button
+          className="btn__settings btn__settings --end"
+          onClick={handleEnd}
+        >
+          Konec
+        </button>
       </div>
       <div className="settings__interval">
         <label>
@@ -21,6 +29,7 @@ export const Settingsday = ({ onClick }) => {
             max="90"
             step="5"
             placeholder="30"
+            onChange={onChange}
           />
           minut
         </label>

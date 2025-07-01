@@ -9,11 +9,16 @@ import { DailyReport } from '../../components/dailyReport';
 ChartJS.register(ArcElement);
 
 export const HomePage = () => {
-  const [startTime, setstartTime] = useState([]);
+  const [startTime, setStartTime] = useState([]);
+  const [customerInterval, setCustomerInterval] = useState(30);
 
-  const handleClick = () => {
+  const handleChange = (e) => {
+    setCustomerInterval(Number(e.target.value));
+  };
+
+  const handlestart = () => {
     const now = new Date();
-    const interval = 30;
+    const interval = customerInterval;
     const count = 5;
     const newTimes = [];
     for (let i = 0; i < count; i++) {
@@ -26,7 +31,12 @@ export const HomePage = () => {
       });
     }
 
-    setstartTime(newTimes);
+    setStartTime(newTimes);
+  };
+
+  const handleEnd = () => {
+    setInterval(30);
+    setStartTime([]);
   };
 
   const data = {
@@ -54,7 +64,7 @@ export const HomePage = () => {
       </header>
 
       <section className="settings__day">
-        <Settingsday onClick={handleClick} />
+        <Settingsday handlestart={handlestart} onChange={handleChange} handleEnd={handleEnd}/>
       </section>
 
       <section className="daily-report">
