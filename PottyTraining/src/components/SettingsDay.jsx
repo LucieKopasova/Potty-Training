@@ -1,10 +1,12 @@
-import React from 'react';
+import { useState } from 'react';
 
-export const Settingsday = ({}) => {
+export const Settingsday = ({ onClick }) => {
   return (
     <>
       <div className="btns__setting">
-        <button className="btn__settings btn__settings--star">Start</button>
+        <button className="btn__settings btn__settings--star" onClick={onClick}>
+          Start
+        </button>
 
         <button className="btn__settings btn__settings --end">Konec</button>
       </div>
