@@ -122,7 +122,7 @@ body {
 }
 
 .img__success {
-  fill: #48966b;
+  fill: #4cc790;
 }
 
 .img__failure {
@@ -131,7 +131,7 @@ body {
 
 .img__success:hover,
 .img__success:focus {
-  fill: #366e4f;
+  fill: #3ea175;
 }
 
 .img__failure:hover,

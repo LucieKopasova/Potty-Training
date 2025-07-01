@@ -2,6 +2,7 @@ import './style.css';
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { Settingsday } from '../../components/SettingsDay';
 
 ChartJS.register(ArcElement);
 
@@ -32,24 +33,7 @@ export const HomePage = () => {
       </header>
 
       <section className="settings__day">
-        <div className="btns__setting">
-          <button className="btn__settings btn__settings--star">Start</button>
-
-          <button className="btn__settings btn__settings --end">Konec</button>
-        </div>
-        <div className="settings__interval">
-          <label>
-            Každých:
-            <input
-              type="number"
-              name="interval"
-              className="interval__input"
-              min="1"
-              placeholder="30"
-            />
-            minut
-          </label>
-        </div>
+        <Settingsday />
       </section>
 
       <section className="daily-report">
