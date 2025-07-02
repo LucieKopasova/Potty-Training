@@ -8,7 +8,7 @@ export const DailyReport = ({ times }) => {
   if (times.length === 0) {
     return (
       <div>
-        <p className="empty__message">Zatím nemáte nic naplánováno.</p>
+        <p className="empty__message">Zatím nemáte nic naplánováno. </p>
       </div>
     );
   }
