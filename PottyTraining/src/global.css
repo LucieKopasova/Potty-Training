@@ -49,9 +49,19 @@ body {
   box-shadow: 0 2px 4px rgba(37, 37, 37, 0.1);
 }
 
+.btn__settings.btn__settings--accident {
+  background-color: #FA5252;
+  ;
+}
+
 .btn__settings:hover,
 .btn__settings:focus {
   background-color: #264951;
+}
+
+.btn__settings--accident:hover,
+.btn__settings--accident:focus {
+  background-color: #e03131;
 }
 
 .settings__interval {

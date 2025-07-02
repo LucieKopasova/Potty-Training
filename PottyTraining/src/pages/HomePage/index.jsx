@@ -32,6 +32,11 @@ export const HomePage = () => {
     }
 
     setStartTime(newTimes);
+    if (!startButton) {
+      setStartButton(true);
+    } else {
+      setStartButton();
+    }
   };
 
   const handleEnd = () => {
@@ -64,7 +69,11 @@ export const HomePage = () => {
       </header>
 
       <section className="settings__day">
-        <Settingsday handlestart={handlestart} onChange={handleChange} handleEnd={handleEnd}/>
+        <Settingsday
+          handlestart={handlestart}
+          onChange={handleChange}
+          handleEnd={handleEnd}
+        />
       </section>
 
       <section className="daily-report">

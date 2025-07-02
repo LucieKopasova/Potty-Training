@@ -1,19 +1,41 @@
 import { useState } from 'react';
 
 export const Settingsday = ({ handlestart, onChange, handleEnd }) => {
+  const [startButton, setStartButton] = useState(false);
+
+  const handleSwitch = () => {
+    if (!startButton) {
+      setStartButton(true);
+    }
+  };
+
+  const handleclick = () => {
+    handleSwitch();
+    handlestart();
+  };
+
+  const handleClickEnd = () => {
+    handleEnd();
+    setStartButton(false);
+  };
+
   return (
     <>
       <div className="btns__setting">
         <button
-          className="btn__settings btn__settings--star"
-          onClick={handlestart}
+          className={
+            startButton
+              ? 'btn__settings btn__settings--accident'
+              : 'btn__settings'
+          }
+          onClick={handleclick}
         >
-          Start
+          {startButton ? 'Nehoda' : 'Start'}
         </button>
 
         <button
           className="btn__settings btn__settings --end"
-          onClick={handleEnd}
+          onClick={handleClickEnd}
         >
           Konec
         </button>
