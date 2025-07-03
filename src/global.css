@@ -9,6 +9,13 @@
 
   --color-background: #f5f5f5;
   --color-secondary: #335c67;
+  --color-success: #4cc790;
+  --color-success-dark: #3ea175;
+  /*  hover */
+  --color-error: #FA5252;
+  --color-error-dark: #e03131;
+  /* hover */
+
 }
 
 body {
@@ -17,6 +24,13 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   min-width: 320px;
   max-width: 480px;
+  margin: auto;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    border: 1px solid var(--color-light);
+  }
 }
 
 /* ---------Header-------------------- */
@@ -30,17 +44,18 @@ body {
 
 .btns__setting {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 
 }
 
 .btn__settings {
   font-size: 1.2rem;
   color: white;
-  background-color: var(--color-secondary);
-  margin: 20px;
   border-radius: 10px;
   display: flex;
   flex-grow: 1;
+  flex-basis: calc(50% - 10px);
   justify-content: center;
   min-height: 3rem;
   align-items: center;
@@ -49,20 +64,27 @@ body {
   box-shadow: 0 2px 4px rgba(37, 37, 37, 0.1);
 }
 
-.btn__settings.btn__settings--accident {
-  background-color: #FA5252;
-  ;
+.btn__setting--end {
+  flex-basis: 100%;
 }
 
-.btn__settings:hover,
-.btn__settings:focus {
+.btn__setting--start {
+  margin: 20px;
+}
+
+.btn__setting--end,
+.btn__setting--start {
+  background-color: var(--color-secondary)
+}
+
+.btn__setting--end:hover,
+.btn__setting--end:focus,
+.btn__setting--start:hover,
+.btn__setting--start:focus {
   background-color: #264951;
 }
 
-.btn__settings--accident:hover,
-.btn__settings--accident:focus {
-  background-color: #e03131;
-}
+
 
 .settings__interval {
   background-color: white;
@@ -77,6 +99,25 @@ body {
   font-size: 1.2rem;
   max-width: 40%;
 
+}
+
+
+.btn__settings.btn__settings--accident {
+  background-color: var(--color-error);
+}
+
+.btn__settings--accident:hover,
+.btn__settings--accident:focus {
+  background-color: var(--color-error-dark)
+}
+
+.btn__settings.btn__settings--unplanned {
+  background-color: var(--color-success);
+}
+
+.btn__settings--unplanned:hover,
+.btn__settings--unplanned:focus {
+  background-color: var(--color-success-dark)
 }
 
 

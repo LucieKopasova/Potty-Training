@@ -19,7 +19,66 @@ export const Settingsday = ({ handlestart, onChange, handleEnd }) => {
     setStartButton(false);
   };
 
-  return (
+  if (!startButton) {
+    return (
+      <>
+        <div className="btns__setting ">
+          <button
+            className="btn__settings btn__setting--start"
+            onClick={handleclick}
+          >
+            Start
+          </button>
+        </div>
+        <div className="settings__interval">
+          <label>
+            Každých:
+            <input
+              type="number"
+              name="interval"
+              className="interval__input"
+              min="5"
+              max="90"
+              step="5"
+              placeholder="30"
+              onChange={onChange}
+            />
+            minut
+          </label>
+        </div>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <div className="btns__setting">
+          <button
+            className={'btn__settings btn__settings--accident'}
+            onClick={handleclick}
+          >
+            Nehoda
+          </button>
+
+          <button
+            className="btn__settings btn__settings--unplanned"
+            onClick={handleclick}
+          >
+            Neplánovaně
+          </button>
+
+          <button
+            className="btn__settings btn__setting--end"
+            onClick={handleClickEnd}
+          >
+            Konec
+          </button>
+        </div>
+      </>
+    );
+  }
+};
+
+/*  return (
     <>
       <div className="btns__setting">
         <button
@@ -59,3 +118,4 @@ export const Settingsday = ({ handlestart, onChange, handleEnd }) => {
     </>
   );
 };
+ */
