@@ -134,12 +134,18 @@ body {
 }
 
 /* ---------Report-------------------- */
-
+.daily-report__container {
+  margin-left: 25%;
+}
 
 .daily-report,
 .settings__day {
   padding: 20px;
   border-bottom: 3px solid black;
+}
+
+.daily-report__item {
+  height: 68px;
 }
 
 
@@ -157,6 +163,8 @@ body {
   background-color: transparent;
   cursor: pointer;
 }
+
+
 
 .list__bullet {
   width: 20px;
@@ -177,22 +185,16 @@ body {
   right: 8px;
 }
 
-.img__success {
-  fill: #4cc790;
+.daily-report__list li:first-child .list__times {
+  background-color: #d0eaff;
+  border-radius: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
 }
 
-.img__failure {
-  fill: #FA5252;
-}
-
-.img__success:hover,
-.img__success:focus {
-  fill: #3ea175;
-}
-
-.img__failure:hover,
-.img__failure:focus {
-  fill: #e03131;
+.list__times {
+  padding: 0 10px;
 }
 
 .daily-report__item {
