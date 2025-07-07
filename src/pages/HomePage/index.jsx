@@ -3,7 +3,7 @@ import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { Settingsday } from '../../components/SettingsDay';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DailyReport } from '../../components/dailyReport';
 
 ChartJS.register(ArcElement);
@@ -43,6 +43,22 @@ export const HomePage = () => {
     setInterval(30);
     setStartTime([]);
   };
+
+  useEffect(() => {
+    if (startTime.length === 0) return;
+
+    const interval = setInterval(() => {
+      const now = new Date();
+      const nowTimeInMinutes = now.getHours() * 60 + now.getMinutes();
+      const firstAlarmInMinutes =
+        startTime[0].hours * 60 + startTime[0].minutes;
+
+      if (nowTimeInMinutes >= firstAlarmInMinutes) {
+        handlestart();
+      }
+    }, 30000);
+    return () => clearInterval(interval);
+  }, [startTime]);
 
   const data = {
     labels: ['Úspěch', 'Neúspěch'],
