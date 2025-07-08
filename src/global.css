@@ -135,7 +135,7 @@ body {
 
 /* ---------Report-------------------- */
 .daily-report__container {
-  margin-left: 25%;
+  margin-left: 15%;
 }
 
 .daily-report,
@@ -190,7 +190,7 @@ body {
   border-radius: 15px;
   display: inline-flex;
   align-items: center;
-  gap: 30px;
+  position: relative;
 }
 
 .list__times {
@@ -207,6 +207,76 @@ body {
   width: 40%;
 }
 
+
+.img__alarmDelay {
+  fill: #cccccc;
+}
+
+.img__alarmDelay:hover,
+.img__alarmDelay:focus {
+  fill: #a7a6a6;
+}
+
+.img__success {
+  fill: var(--color-success);
+}
+
+.img__success:hover,
+.img__success:focus {
+  fill: var(--color-success-dark);
+}
+
+/* ---------AlarmDelayMenu
+-------------------- */
+.alarmDelayMenu-container {
+  position: absolute;
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  font-size: 1.2rem;
+  right: -20%;
+  top: -30%;
+}
+
+.alarmDelayMenu-header {
+  align-self: flex-start;
+  font-size: 1.2rem;
+
+}
+
+.alarmDelayMenu-btn {
+  background-color: #dddddd;
+  font-size: 1rem;
+  border: none;
+  padding: 10px 15px;
+
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.alarmDelayMenu-btn:hover,
+.alarmDelayMenu-btn:focus {
+  background-color: #cccccc;
+}
+
+.alarmDelayMenu-btn:active {
+  background-color: #b3b2b2;
+}
+
+.alarmDelayMenu-btn.close-menu {
+  background-color: var(--color-success);
+  color: var(--color-background);
+  align-self: flex-end;
+  width: auto;
+
+}
+
+
 /* ---------Graphs
 -------------------- */
 .daily-graphs {
@@ -215,7 +285,9 @@ body {
 
 .daily-graphs__title {
   font-weight: normal;
-  font-size: 1.5rem
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+
 }
 
 .graphs {

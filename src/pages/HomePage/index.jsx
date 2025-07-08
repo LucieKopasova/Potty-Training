@@ -11,6 +11,7 @@ ChartJS.register(ArcElement);
 export const HomePage = () => {
   const [startTime, setStartTime] = useState([]);
   const [customerInterval, setCustomerInterval] = useState(30);
+  const [showButton, setShowButton] = useState(true);
 
   const handleChange = (e) => {
     setCustomerInterval(Number(e.target.value));
@@ -56,6 +57,12 @@ export const HomePage = () => {
       if (nowTimeInMinutes >= firstAlarmInMinutes) {
         handlestart();
       }
+
+      if (nowTimeInMinutes === firstAlarmInMinutes - 2) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
     }, 30000);
     return () => clearInterval(interval);
   }, [startTime]);
@@ -93,7 +100,7 @@ export const HomePage = () => {
       </section>
 
       <section className="daily-report">
-        <DailyReport times={startTime} />
+        <DailyReport times={startTime} successButton={showButton} />
       </section>
 
       <section className="daily-graphs">
