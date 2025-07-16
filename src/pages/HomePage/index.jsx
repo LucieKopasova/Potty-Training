@@ -33,10 +33,22 @@ export const HomePage = () => {
     }
 
     setStartTime(newTimes);
-    if (!startButton) {
-      setStartButton(true);
-    } else {
-      setStartButton();
+    console.log(delay);
+  };
+  console.log(startTime);
+
+  const handleAlarmDelayChange = (alarmDelayInterval) => {
+    if (alarmDelayInterval >= 0) {
+      const updatedTimes = startTime.map(({ hours, minutes }) => {
+        const totalMinutes = hours * 60 + minutes + alarmDelayInterval;
+
+        const newHours = Math.floor(totalMinutes / 60) % 24;
+        const newMinutes = totalMinutes % 60;
+
+        return { hours: newHours, minutes: newMinutes };
+      });
+
+      setStartTime(updatedTimes);
     }
   };
 
@@ -100,7 +112,11 @@ export const HomePage = () => {
       </section>
 
       <section className="daily-report">
-        <DailyReport times={startTime} successButton={showButton} />
+        <DailyReport
+          times={startTime}
+          successButton={showButton}
+          onAlarmDelayChange={handleAlarmDelayChange}
+        />
       </section>
 
       <section className="daily-graphs">

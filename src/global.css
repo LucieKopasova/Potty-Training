@@ -259,14 +259,25 @@ body {
   text-align: center;
 }
 
+
 .alarmDelayMenu-btn:hover,
 .alarmDelayMenu-btn:focus {
   background-color: #cccccc;
 }
 
-.alarmDelayMenu-btn:active {
-  background-color: #b3b2b2;
+.alarmDelayMenu-btn--active {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
 }
+
+
+.alarmDelayMenu-btn--active:hover,
+.alarmDelayMenu-btn--active:focus {
+  background-color: #264951;
+  color: var(--color-background);
+}
+
+
 
 .alarmDelayMenu-btn.close-menu {
   background-color: var(--color-success);

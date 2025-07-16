@@ -1,9 +1,9 @@
 import { AlarmDelayMenu } from './AlarmDelayMenu';
 import { useState } from 'react';
 
-export const DailyReport = ({ times, successButton }) => {
+export const DailyReport = ({ times, successButton,onAlarmDelayChange }) => {
   const [showAlarmDelayMenu, setShowAlarmDelayMenu] = useState(false);
-  console.log(times);
+ 
 
   function formatTime(number) {
     return number < 10 ? '0' + number : number;
@@ -85,7 +85,11 @@ export const DailyReport = ({ times, successButton }) => {
                       </svg>
                     </button>
                     {showAlarmDelayMenu && (
-                      <AlarmDelayMenu closeMenu={handleShowAlarmDylayMenu} />
+                      <AlarmDelayMenu
+                      onAlarmDelayChange={onAlarmDelayChange}
+                        
+                        closeMenu={handleShowAlarmDylayMenu}
+                      />
                     )}
 
                     {successButton && (
